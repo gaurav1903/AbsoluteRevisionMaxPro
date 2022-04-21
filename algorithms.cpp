@@ -20,6 +20,25 @@ vector<int> readfromline()
     return v;
 }
 
+int power(int a,int b,int c)//  (a^b)%c //c<=10**9+7
+{
+    if(b==1)
+        return a;
+    if(b==0)
+        return 1;
+    int x=power(a,b/2,c);
+    if(b%2==1)
+    {
+        long long int y=((((long long int)x*x)%c)*(a))%c; 
+        return y;
+    }
+    else
+    {
+        long long int y=((long long int)x*x)%c;
+        return y;
+    }
+}
+
 
 ll prim(vector<vector<pair<int,int>>>graph)// returns sum of edges and takes vector whose each member is a vector 0th vector denoting 1 vertex is connected to other vertices each of ths is apair
 //{vertex it is connected to,weight of edge connecting them}
