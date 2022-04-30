@@ -19,6 +19,13 @@ vector<int> readfromline()
     }
     return v;
 }
+int giverandom(int start,int end)
+{
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist6(start,end);
+    return dist6(rng);
+}
 
 int power(int a,int b,int c)//  (a^b)%c //c<=10**9+7
 {
